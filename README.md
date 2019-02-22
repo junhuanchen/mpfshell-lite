@@ -7,6 +7,6 @@ pip install git+https://github.com/junhuanchen/mpfshell-lite
 
 ## usage:
 
-1. in shell(cmd) input `mpfshell-lite`
+1. in shell(cmd) input `mpfshell-lite` into mpfshell CUI.
 
-2. in python input `import mp.mpfshell` and use `mp.mpfshell.main()` running mpfshell cui.
+2. in python input `import mp.mpfshell` and use `mp.mpfshell.main()` running mpfshell CUI.
