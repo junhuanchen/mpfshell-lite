@@ -3,6 +3,8 @@ The lightweight version of the mpfshell is for pure CUI drivers, see more https:
 
 ## install:
 
+pip install mpfshell-lite
+
 pip install git+https://github.com/junhuanchen/mpfshell-lite
 
 ## usage:
