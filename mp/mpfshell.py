@@ -106,7 +106,7 @@ class MpFileShell(cmd.Cmd):
 
         print('\n' + msg + '\n')
 
-    def __connect(self, port):
+    def __connect(self, port, reconnect=False):
 
         try:
             self.__disconnect()
@@ -129,8 +129,10 @@ class MpFileShell(cmd.Cmd):
         except AttributeError as e:
             logging.error(e)
             self.__error("Failed to open: %s" % port)
+        except Exception as e:
+            print(e)
 
-        if self.__is_open() == False:
+        if reconnect and self.__is_open() == False:
             time.sleep(3)
             self.__connect(None)
 
@@ -152,6 +154,8 @@ class MpFileShell(cmd.Cmd):
                 self.__set_prompt_path()
             except RemoteIOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def __is_open(self):
 
@@ -251,6 +255,8 @@ class MpFileShell(cmd.Cmd):
 
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def do_pwd(self, args):
         """pwd
@@ -278,6 +284,8 @@ class MpFileShell(cmd.Cmd):
                 self.__set_prompt_path()
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def complete_cd(self, *args):
 
@@ -306,6 +314,8 @@ class MpFileShell(cmd.Cmd):
                 self.fe.md(s_args[0])
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def do_lls(self, args):
         """lls
@@ -343,6 +353,8 @@ class MpFileShell(cmd.Cmd):
                 os.chdir(s_args[0])
             except OSError as e:
                 self.__error(str(e).split("] ")[-1])
+            except Exception as e:
+                print(e)
 
     def complete_lcd(self, *args):
         dirs = [o for o in os.listdir(".") if os.path.isdir(os.path.join(".", o))]
@@ -384,6 +396,8 @@ class MpFileShell(cmd.Cmd):
                 self.fe.put(lfile_name, rfile_name)
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def complete_put(self, *args):
         files = [o for o in os.listdir(".") if os.path.isfile(os.path.join(".", o))]
@@ -406,6 +420,8 @@ class MpFileShell(cmd.Cmd):
                 self.fe.mput(os.getcwd(), args, True)
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def do_get(self, args):
         """get <REMOTE FILE> [<LOCAL FILE>]
@@ -437,6 +453,8 @@ class MpFileShell(cmd.Cmd):
                 self.fe.get(rfile_name, lfile_name)
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def do_mget(self, args):
         """mget <SELECTION REGEX>
@@ -455,6 +473,8 @@ class MpFileShell(cmd.Cmd):
                 self.fe.mget(os.getcwd(), args, True)
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def complete_get(self, *args):
 
@@ -489,6 +509,8 @@ class MpFileShell(cmd.Cmd):
                 self.__error(str(e))
             except PyboardError:
                 self.__error("Unable to send request to %s" % self.fe.sysname)
+            except Exception as e:
+                print(e)
 
     def do_mrm(self, args):
         """mrm <SELECTION REGEX>
@@ -506,6 +528,8 @@ class MpFileShell(cmd.Cmd):
                 self.fe.mrm(args, True)
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def complete_rm(self, *args):
 
@@ -539,6 +563,8 @@ class MpFileShell(cmd.Cmd):
                 print(self.fe.gets(s_args[0]))
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     complete_cat = complete_get
 
@@ -569,6 +595,8 @@ class MpFileShell(cmd.Cmd):
                 self.do_ef(args)
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def do_ef(self, args):
         self.do_execfile(args)
@@ -587,6 +615,8 @@ class MpFileShell(cmd.Cmd):
                 self.fe.keyboard_interrupt()
                 print(e)
             except PyboardError as e:
+                print(e)
+            except Exception as e:
                 print(e)
             finally:
                 if (self.open_args.startswith("ser:")):
@@ -619,6 +649,8 @@ class MpFileShell(cmd.Cmd):
 
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def do_e(self, args):
         self.do_exec(args)
@@ -648,7 +680,7 @@ class MpFileShell(cmd.Cmd):
             except PyboardError as e:
                 self.__error(str(e))
             except Exception as e:
-                self.__error(str(e))
+                print(e)
 
     def do_r(self, args):
         self.do_repl(args)
@@ -727,6 +759,8 @@ class MpFileShell(cmd.Cmd):
                 self.fe.mpy_cross(s_args[0])
             except IOError as e:
                 self.__error(str(e))
+            except Exception as e:
+                print(e)
 
     def complete_mpyc(self, *args):
         files = [o for o in os.listdir(".") if (os.path.isfile(os.path.join(".", o)) and o.endswith(".py"))]
@@ -809,6 +843,8 @@ def main():
             mpfs.cmdloop()
         except KeyboardInterrupt:
             print("")
+        except Exception as e:
+            print(e)
 
 
 if __name__ == '__main__':
