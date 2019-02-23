@@ -1,2 +1,2 @@
 pyserial ~= 3.4
-websocket_client ~= 0.38.0
+websocket_client ~= 0.54.0
