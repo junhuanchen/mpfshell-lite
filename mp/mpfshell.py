@@ -45,19 +45,6 @@ from mp.tokenizer import Tokenizer
 
 class MpFileShell(cmd.Cmd):
 
-    def view_all_serial(self):
-        import serial.tools.list_ports
-        print("looking for computer port...")
-        plist = list(serial.tools.list_ports.comports())
-
-        if len(plist) <= 0:
-            print("serial not found!")
-        else:
-            for serial in plist:
-                print("serial name :", serial[0].split('/')[-1])
-            print("input ' open", plist[len(plist) - 1][0].split('/')[-1], "' and enter connect your board.")
-        
-
     def __init__(self, color=False, caching=False, reset=False, help=False):
         cmd.Cmd.__init__(self)
 
@@ -80,8 +67,16 @@ class MpFileShell(cmd.Cmd):
 
         if help is False:
             self.do_help(None)
-            print("All support commands, can input help ls or other command if you don't know how to use it(ls).")
-            self.view_all_serial()
+            print("can input help ls or other command if you don't know how to use it.")
+
+            plist = self.all_serial()
+            if len(plist) <= 0:
+                print("serial not found!")
+            else:
+                for serial in plist:
+                    print("serial name :", serial[1], " : ", serial[0].split('/')[-1])
+                print("input ' open", plist[len(plist) - 1][0].split('/')[-1], "' and enter connect your board.")
+            
 
     def __del__(self):
         self.__disconnect()
@@ -175,6 +170,30 @@ class MpFileShell(cmd.Cmd):
             return [token.value for token in tokens]
 
         return None
+
+    def all_serial(self):
+        import serial.tools.list_ports
+        print("looking for all port...")
+        plist = list(serial.tools.list_ports.comports())
+        return plist
+        
+    def do_view(self, args):
+        """view(v)
+        view all serial.
+        """
+        plist = self.all_serial()
+        if len(plist) <= 0:
+            print("serial not found!")
+        else:
+            for serial in plist:
+                print("serial name :", serial[1], " : ", serial[0].split('/')[-1])
+
+        if self.open_args:
+            print("current open_args", self.open_args)
+
+
+    def do_v(self, args):
+        return self.do_view(args)
 
     def do_q(self, args):
         return self.do_quit(args)
