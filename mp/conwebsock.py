@@ -52,7 +52,7 @@ class ConWebsock(ConBase, threading.Thread):
 
         self.start()
 
-        self.timeout = 5.0
+        self.timeout = 10.0
 
         if b'Password:' in self.read(10, blocking=False):
             self.ws.send(password + "\r")
@@ -63,7 +63,7 @@ class ConWebsock(ConBase, threading.Thread):
             print("\nWebREPL Remote IP does not respond, check belong to the same network.")
             raise ConError()
 
-        self.timeout = 1.0
+        self.timeout = 5.0
 
         logging.info("websocket connected to ws://%s:8266" % ip)
 
