@@ -3,7 +3,7 @@
 from mp import version
 from distutils.core import setup
 
-setup(name='mpfshell-lite',
+setup(name='mpfs',
       version=version.FULL,
       description='The lightweight version of the mpfshell is for pure CUI drivers.',
       author='Stefan Wendler & Juwan',
@@ -12,8 +12,8 @@ setup(name='mpfshell-lite',
       download_url='https://codeload.github.com/junhuanchen/mpfshell-lite/zip/master',
       install_requires=['pyserial', 'websocket_client'],
       packages=['mp'],
-      scripts=['mpfshell-lite'],
+      scripts=['mpfs'],
       keywords=['micropython', 'shell', 'file transfer', 'development'],
       classifiers=[],
-      entry_points={"console_scripts": ["mpfshell-lite=mp.mpfshell:main"]},
+      entry_points={"console_scripts": ["mpfs=mp.mpfshell:main"]},
 )
