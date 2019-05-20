@@ -1,4 +1,4 @@
-# mpfshell-lite [Chinese](README.md)
+# mpfshell-lite [中文](README.md)
 
 A simple to use the Shell resource manager Micropython file ⛺ 
 
