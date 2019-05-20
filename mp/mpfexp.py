@@ -24,6 +24,7 @@
 
 
 import os
+import posixpath  # force posix-style slashes
 import re
 import sre_constants
 import binascii
@@ -148,7 +149,8 @@ class MpFileExplorer(Pyboard):
         return con
 
     def _fqn(self, name):
-        return os.path.join(self.dir, name)
+        print(name, posixpath.join(self.dir, name).replace("\\","/"))
+        return posixpath.join(self.dir, name).replace("\\","/")
 
     def __set_sysname(self):
         self.sysname = self.eval("os.uname()[0]").decode('utf-8')
@@ -171,7 +173,7 @@ class MpFileExplorer(Pyboard):
         # New version mounts files on /flash so lets set dir based on where we are in
         # filesystem.
         # Using the "path.join" to make sure we get "/" if "os.getcwd" returns "".
-        self.dir = os.path.join("/", self.eval("os.getcwd()").decode('utf8'))
+        self.dir = posixpath.join("/", self.eval("os.getcwd()").decode('utf8'))
 
         self.__set_sysname()
 
@@ -309,11 +311,11 @@ class MpFileExplorer(Pyboard):
             files = os.listdir(src_dir)
 
             for f in files:
-                if os.path.isfile(f) and find.match(f):
+                if posixpath.isfile(f) and find.match(f):
                     if verbose:
                         print(" * put %s" % f)
 
-                    self.put(os.path.join(src_dir, f), f)
+                    self.put(posixpath.join(src_dir, f), f)
 
         except sre_constants.error as e:
             raise RemoteIOError("Error in regular expression: %s" % e)
@@ -361,7 +363,7 @@ class MpFileExplorer(Pyboard):
                     if verbose:
                         print(" * get %s" % f)
 
-                    self.get(f, dst=os.path.join(dst_dir, f))
+                    self.get(f, dst=posixpath.join(dst_dir, f))
 
         except sre_constants.error as e:
             raise RemoteIOError("Error in regular expression: %s" % e)
@@ -434,7 +436,7 @@ class MpFileExplorer(Pyboard):
         if target.startswith("/"):
             tmp_dir = target
         elif target == "..":
-            tmp_dir, _ = os.path.split(self.dir)
+            tmp_dir, _ = posixpath.split(self.dir)
         else:
             tmp_dir = self._fqn(target)
 
@@ -539,7 +541,7 @@ class MpFileExplorerCaching(MpFileExplorer):
         if dst is None:
             dst = src
 
-        path = os.path.split(self._fqn(dst))
+        path = posixpath.split(self._fqn(dst))
         newitm = path[-1]
         parent = path[:-1][0]
 
@@ -553,7 +555,7 @@ class MpFileExplorerCaching(MpFileExplorer):
 
         MpFileExplorer.puts(self, dst, lines)
 
-        path = os.path.split(self._fqn(dst))
+        path = posixpath.split(self._fqn(dst))
         newitm = path[-1]
         parent = path[:-1][0]
 
@@ -567,7 +569,7 @@ class MpFileExplorerCaching(MpFileExplorer):
 
         MpFileExplorer.md(self, dir)
 
-        path = os.path.split(self._fqn(dir))
+        path = posixpath.split(self._fqn(dir))
         newitm = path[-1]
         parent = path[:-1][0]
 
@@ -581,7 +583,7 @@ class MpFileExplorerCaching(MpFileExplorer):
 
         MpFileExplorer.rm(self, target)
 
-        path = os.path.split(self._fqn(target))
+        path = posixpath.split(self._fqn(target))
         rmitm = path[-1]
         parent = path[:-1][0]
 
