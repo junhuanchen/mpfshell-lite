@@ -3,7 +3,7 @@
 from mp import version
 from distutils.core import setup
 
-setup(name='mpfs',
+setup(name='mpfshell-lite',
       version=version.FULL,
       description='The lightweight version of the mpfshell is for pure CUI drivers.',
       author='Stefan Wendler & Juwan',
