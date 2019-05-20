@@ -157,6 +157,7 @@ If there is a dead loop without any delay in the connection process, it will aff
 ### 2. All of the use of the command
 
 Command the braces for short, easy to use.
+
 | command type | USES method | to run the result | note |
 | ------------ | ------------------------------------------------------------ | ---------------------------------------------------- | ------------------------------------------------------------ |
 | open (o) | opens the current device. Format: a serial port cable ` open com3 `, wireless ` ws: 192.168.10.114, 1234 ` | connection after a successful return to ` Connected to esp32 ` | control board before, need to open the connection first. The parentheses are shorthand.             |
@@ -184,7 +185,7 @@ Command the braces for short, easy to use.
 | ls           | input` ls /`                                                  | View all files in the board's current directory                       |                                                              |
 | lls          | input `lls /`                                                 | View all files in the program's current directory                       |                                                              |
 | view          | input `view`                                                 | View the possible serial ports on the machine, and the current open configuration                     |                                                              |
-| help         | View the help command, for example:`help lls`                             |                                                      |
+| help         | View the help command, for example : `help lls`                             |                                                      |
 
 # pyinstaller
 
