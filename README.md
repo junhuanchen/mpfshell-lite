@@ -24,7 +24,7 @@
 
 ## 使用方法
 
-### 1. 到 [releases](https://github.com/junhuanchen/mpfshell-lite/releases) 下载 editor.exe。
+### 1. 到 [releases](https://github.com/junhuanchen/mpfshell-lite/releases) 下载 mpfs.exe。
 
 寻找你所用的系统版本并下载，如果下载很慢，可以用[微云地址](https://share.weiyun.com/5JlPb6T)，下载后双击运行它。
 
