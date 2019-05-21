@@ -2,7 +2,17 @@
 
 一个简单好用的 Shell 的 Micropython 文件资源管理器⛺
 
-这个 mpfshell 的 lite 版是开发十分激进的版本，稳定版请参见 [mpfshell](https://github.com/wendlers/mpfshell) ，与稳定版不同的在于，添加了 直接运行代码命令 和 Windows 控制台乱码 和 盘符路径修复 等一系列更适合 Windows 使用的版本。
+这个 mpfshell 的 lite 版是开发十分激进的版本，稳定版请参见 [mpfshell](https://github.com/wendlers/mpfshell) 。
+
+与稳定版不同的在于，添加了 直接运行代码命令 和 Windows 控制台乱码 和 盘符路径修复 等一系列更适合 Windows 使用的版本。
+
+特点：
+
+1. 体积迷你，功能齐全的 MicroPython 管理工具，如：put\get\cat\rm\execfile 等等。
+
+2. 修复 Windows 大量使用问题，路径、乱码等等，但还是存在一些问题在陆续解决。
+
+3. Windows 下绿色单文件，开箱即用，也可使用 Python 跨平台运行。
 
 ## 系统要求
 
