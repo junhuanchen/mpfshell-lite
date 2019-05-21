@@ -1,4 +1,4 @@
-# mpfshell-lite [English](English.md)
+# mpfshell-lite [English](English.md) [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](./LICENSE)
 
 一个简单好用的 Shell 的 Micropython 文件资源管理器⛺
 
