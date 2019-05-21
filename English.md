@@ -4,6 +4,11 @@ A simple to use the Shell resource manager Micropython file ⛺
 
 The lite version of this mpfshell is an aggressive development version. The stable version is available at [mpfshell](https://github.com/wendlers/mpfshell).
 
+## System requirements
+
+- Python 3.5.4 +
+- requirements.txt
+
 ## Uasge
 
 ### 1. into [releases](https://github.com/junhuanchen/mpfshell-lite/releases) download editor.exe.

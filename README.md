@@ -4,6 +4,11 @@
 
 这个 mpfshell 的 lite 版是开发十分激进的版本，稳定版请参见 [mpfshell](https://github.com/wendlers/mpfshell) ，与稳定版不同的在于，添加了 直接运行代码命令 和 Windows 控制台乱码 和 盘符路径修复 等一系列更适合 Windows 使用的版本。
 
+## 系统要求
+
+- Python 3.5.4 +
+- requirements.txt
+
 ## 使用方法
 
 ### 1. 到 [releases](https://github.com/junhuanchen/mpfshell-lite/releases) 下载 editor.exe。
