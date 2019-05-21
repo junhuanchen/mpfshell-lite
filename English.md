@@ -22,7 +22,7 @@ The lite version of this mpfshell is an aggressive development version. The stab
 
 ## Uasge
 
-### 1. into [releases](https://github.com/junhuanchen/mpfshell-lite/releases) download editor.exe.
+### 1. into [releases](https://github.com/junhuanchen/mpfshell-lite/releases) download mpfs.exe.
 
 Find the version of the system you are using and download it.
 
