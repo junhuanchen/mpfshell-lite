@@ -1,5 +1,7 @@
 # mpfshell-lite [English](English.md) [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](./LICENSE)
 
+[![PyPI version](https://badge.fury.io/py/mpfshell-lite.svg)](https://badge.fury.io/py/mpfshell-lite)
+
 一个简单好用的 Shell 的 Micropython 文件资源管理器⛺
 
 这个 mpfshell 的 lite 版是开发十分激进的版本，稳定版请参见 [mpfshell](https://github.com/wendlers/mpfshell) 。

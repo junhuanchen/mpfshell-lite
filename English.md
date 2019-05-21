@@ -1,5 +1,7 @@
 # mpfshell-lite [中文](README.md) [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](./LICENSE)
 
+[![PyPI version](https://badge.fury.io/py/mpfshell-lite.svg)](https://badge.fury.io/py/mpfshell-lite)
+
 A simple to use the Shell resource manager Micropython file ⛺ 
 
 The lite version of this mpfshell is an aggressive development version. The stable version is available at [mpfshell](https://github.com/wendlers/mpfshell).
