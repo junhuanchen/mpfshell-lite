@@ -6,7 +6,7 @@
 
 与稳定版不同的在于，添加了 直接运行代码命令 和 Windows 控制台乱码 和 盘符路径修复 等一系列更适合 Windows 使用的版本。
 
-特点：
+## 特点：
 
 1. 体积迷你，功能齐全的 MicroPython 管理工具，如：put\get\cat\rm\execfile 等等。
 

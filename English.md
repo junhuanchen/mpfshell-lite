@@ -4,7 +4,7 @@ A simple to use the Shell resource manager Micropython file ⛺
 
 The lite version of this mpfshell is an aggressive development version. The stable version is available at [mpfshell](https://github.com/wendlers/mpfshell).
 
-Features:
+## Features:
 
 1. Compact, full-featured MicroPython management tools, such as: put\get\cat\rm\execfile and so on.
 
