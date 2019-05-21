@@ -1,5 +1,6 @@
-# mpfshell-lite [中文](README.md) [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](./LICENSE)
+# mpfshell-lite [中文](README.md)
 
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![PyPI version](https://badge.fury.io/py/mpfshell-lite.svg)](https://badge.fury.io/py/mpfshell-lite)
 
 A simple to use the Shell resource manager Micropython file ⛺ 
