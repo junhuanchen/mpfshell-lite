@@ -34,7 +34,7 @@
 使用 Python 的 PIP 工具下载并安装，在控制台中输入`pip insrall mpfshell-lite`，然后输入 `mpfs` 即可运行。
 
 ```shell
-pip insrall mpfshell-lite
+pip install mpfshell-lite
 
 mpfs
 ```
