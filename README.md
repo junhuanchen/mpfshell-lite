@@ -1,11 +1,7 @@
 
-```
-      一款程序员专属的 Shell 型 Micropython 文件资源管理器⛺
-```
+# &emsp;&emsp;&emsp;一款 Shell 型 MicroPython 文件资源管理器⛺
 
  [English Docs](English.md)
-
-# mpfshell-lite
 
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![PyPI version](https://badge.fury.io/py/mpfshell-lite.svg)](https://badge.fury.io/py/mpfshell-lite)
