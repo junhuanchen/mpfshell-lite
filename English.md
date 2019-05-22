@@ -1,16 +1,10 @@
 
-```
-      A Programmer Specific Shell Micropython File Explorer⛺
-```
+# &emsp;&emsp;&emsp;&emsp;A Shell Type Micropython File Explorer⛺
 
 [中文文档](README.md)
 
-# mpfshell-lite
-
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![PyPI version](https://badge.fury.io/py/mpfshell-lite.svg)](https://badge.fury.io/py/mpfshell-lite)
-
-A simple to use the Shell resource manager Micropython file ⛺ 
 
 The lite version of this mpfshell is an aggressive development version. The stable version is available at [mpfshell](https://github.com/wendlers/mpfshell).
 
