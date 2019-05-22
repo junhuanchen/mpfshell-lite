@@ -34,7 +34,7 @@ Find the version of the system you are using and download it.
 Using the Python PIP tool to download and install, in the console input ` pip insrall mpfshell-lite`, then enter `mpfs` can run.
 
 ```shell
-pip insrall mpfshell-lite
+pip install mpfshell-lite
 
 mpfs
 ```
