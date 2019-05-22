@@ -1,4 +1,11 @@
-# mpfshell-lite [中文](README.md)
+
+```
+      A Programmer Specific Shell Micropython File Explorer⛺
+```
+
+[中文文档](README.md)
+
+# mpfshell-lite
 
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![PyPI version](https://badge.fury.io/py/mpfshell-lite.svg)](https://badge.fury.io/py/mpfshell-lite)

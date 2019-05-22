@@ -1,13 +1,16 @@
-# mpfshell-lite [English](English.md)
+
+```
+      一款程序员专属的 Shell 型 Micropython 文件资源管理器⛺
+```
+
+ [English Docs](English.md)
+
+# mpfshell-lite
 
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![PyPI version](https://badge.fury.io/py/mpfshell-lite.svg)](https://badge.fury.io/py/mpfshell-lite)
 
-一个简单好用的 Shell 的 Micropython 文件资源管理器⛺
-
 这个 mpfshell 的 lite 版是开发十分激进的版本，稳定版请参见 [mpfshell](https://github.com/wendlers/mpfshell) 。
-
-与稳定版不同的在于，添加了 直接运行代码命令 和 Windows 控制台乱码 和 盘符路径修复 等一系列更适合 Windows 使用的版本。
 
 ## 特点：
 
