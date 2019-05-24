@@ -25,6 +25,6 @@
 
 MAJOR = 0
 MINOR = 9
-PATCH = 1
+PATCH = 3
 
 FULL = "%d.%d.%d" % (MAJOR, MINOR, PATCH)

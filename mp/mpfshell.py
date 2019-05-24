@@ -221,6 +221,11 @@ class MpFileShell(cmd.Cmd):
         """
 
         if not len(args):
+            plist = self.all_serial()
+            if len(plist) != 0:
+                args = plist[0][0].split('/')[-1]
+
+        if not len(args):
             self.__error("Missing argument: <PORT>")
         else:
             if not args.startswith("ser:/dev/") \
