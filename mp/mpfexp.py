@@ -149,7 +149,7 @@ class MpFileExplorer(Pyboard):
         return con
 
     def _fqn(self, name):
-        print(name, posixpath.join(self.dir, name).replace("\\","/"))
+        # print(name, posixpath.join(self.dir, name).replace("\\","/"))
         return posixpath.join(self.dir, name).replace("\\","/")
 
     def __set_sysname(self):
