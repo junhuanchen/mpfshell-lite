@@ -45,7 +45,7 @@ mpfs
 
 连接你的硬件，此时会出现当前硬件的端口号。
 
-```
+``` unix
 looking for all port...
 serial name : USB-SERIAL CH340 (COM5)  :  COM5
 input ' open COM5 ' and enter connect your board.
@@ -57,11 +57,28 @@ input ' open COM5 ' and enter connect your board.
 
 可以看到 `Connected to esp32` 已经连接了。
 
+### 进入 REPL 模式
+
+``` unix
+mpfs [/]> open
+looking for all port...
+Connected to esp32
+mpfs [/]> repl
+>
+*** Exit REPL with Ctrl+Q ***
+
+MicroPython v1.10-220-ged36cfd56-dirty on 2019-05-28; ESP32 module with ESP32
+Type "help()" for more information.
+>>>
+```
+
+![](readme/06.png)
+
 ## 运行 micropython 代码。
 
 ### 1.直接运行代码
 
-```
+``` unix
 mpfs [/]> view
 looking for all port...
 serial name : USB-SERIAL CH340 (COM5)  :  COM5
@@ -91,7 +108,7 @@ print('hello world!')
 
 将 exe 与 .py 放在一起，按以下命令操作。
 
-```
+``` unix
 looking for all port...
 serial name : USB-SERIAL CH340 (COM5)  :  COM5
 input ' open COM5 ' and enter connect your board.
@@ -115,7 +132,7 @@ mpfs [/]>
 
 可以使用 lcd 定位到运行文件的路径下，如 `lcd C:/Users/Juwan/Desktop` （注意是 / 不是 \，这让人很烦）
 
-```
+``` unix
 mpfs [/]> open com5
 Connected to esp32
 mpfs [/]> lcd Desktop
