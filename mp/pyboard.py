@@ -70,10 +70,10 @@ class Pyboard:
             self.con.write(b'\x02\x02\x02\x02')
             time.sleep(0.1)
 
-            data = self.read_until(1, b'>>>', timeout=3, max_recv=8000)
+            data = self.read_until(1, b'>>>', timeout=5, max_recv=8000)
             if not data.endswith(b'>>>'):
                 # print(data)
-                print('Could not enter raw repl, Press Reset key for more than 3 seconds ')
+                print('Could not enter raw repl, Press Reset key after 5 seconds.')
             else:
                 break
 
@@ -87,7 +87,7 @@ class Pyboard:
         self.con.write(b'\r\x01') # ctrl-A: enter raw REPL
         data = self.read_until(1, b'raw REPL; CTRL-B to exit', max_recv=8000)
         if not data.endswith(b'raw REPL; CTRL-B to exit'):
-            print(data)
+            # print(data)
             raise PyboardError('could not enter raw repl')
 
     def exit_raw_repl(self):
