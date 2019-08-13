@@ -65,15 +65,15 @@ class Pyboard:
         # waiting any board boot start and enter micropython
         for i in range(8):
             time.sleep(0.1)
-            self.con.write(b'\x03')
+            self.con.write(b'\x03\x03\x03\x03')
             time.sleep(0.1)
-            self.con.write(b'\x02')
+            self.con.write(b'\x02\x02\x02\x02')
             time.sleep(0.1)
 
             data = self.read_until(1, b'>>>', timeout=3, max_recv=8000)
             if not data.endswith(b'>>>'):
                 # print(data)
-                print('could not enter raw repl, Press the reset key. ')
+                print('Could not enter raw repl, Press Reset key for more than 3 seconds ')
             else:
                 break
 
