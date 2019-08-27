@@ -417,7 +417,28 @@ class MpFileShell(cmd.Cmd):
             else:
                 rfile_name = lfile_name
             try:
-                self.fe.put(lfile_name, rfile_name)
+                if os.path.isdir(lfile_name):
+                    print(" <dir> %s" % lfile_name)
+                    local = os.getcwd() # backup
+                    remote = self.fe.pwd()
+                    try:
+                        # make dir in remote
+                        self.fe.md(lfile_name)
+                    except Exception as e:
+                        pass
+                        # print(e)
+                    self.fe.cd(lfile_name)
+                    # cd dir get files to put
+                    os.chdir(lfile_name)
+                    for f in os.listdir("."):
+                        if os.path.isfile(f):
+                            self.fe.put(f, f)
+                    self.fe.cd(remote)
+                    os.chdir(local) # restore
+
+                if os.path.isfile(lfile_name):
+                    print("       %s" % lfile_name)
+                    self.fe.put(lfile_name, rfile_name)           
             except IOError as e:
                 self.__error(str(e))
             except Exception as e:
