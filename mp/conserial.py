@@ -24,6 +24,7 @@
 
 import time
 import logging
+import sys
 
 from serial import Serial
 from mp.conbase import ConBase, ConError
@@ -35,7 +36,11 @@ class ConSerial(ConBase):
         ConBase.__init__(self)
 
         try:
-            self.serial = Serial(port, baudrate=baudrate, interCharTimeout=1)
+            self.serial = Serial(baudrate=baudrate, interCharTimeout=1)
+
+            self.serial.port = port
+            self.serial.dtr = self.serial.rts = False
+            self.serial.open()
 
             if reset:
                 logging.info("Hard resetting device at port: %s" % port)
