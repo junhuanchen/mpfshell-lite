@@ -83,7 +83,7 @@ class MpFileShell(cmd.Cmd):
 
     def __intro(self):
 
-        self.intro = '\n** Micropython File Shell v%s, sw@kaltpost.de & juwan@banana-pi.com **\n' % version.FULL
+        self.intro = '\n** Micropython File Shell v%s, sw@kaltpost.de & junhuanchen@qq.com **\n' % version.FULL
 
         self.intro += '-- Running on Python %d.%d using PySerial %s --\n' \
                       % (sys.version_info[0], sys.version_info[1], serial.VERSION)
