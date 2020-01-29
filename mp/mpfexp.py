@@ -63,7 +63,7 @@ class RemoteIOError(IOError):
 
 class MpFileExplorer(Pyboard):
 
-    BIN_CHUNK_SIZE = 64
+    BIN_CHUNK_SIZE = 64 * 100
     MAX_TRIES = 3
 
     def __init__(self, constr, reset=False):
@@ -285,6 +285,7 @@ class MpFileExplorer(Pyboard):
 
             self.exec_("f = open('%s', 'wb')" % self._fqn(dst))
 
+            file_size = len(data)
             while True:
                 c = binascii.hexlify(data[:self.BIN_CHUNK_SIZE])
                 if not len(c):
@@ -293,6 +294,7 @@ class MpFileExplorer(Pyboard):
                 self.exec_("f.write(ubinascii.unhexlify('%s'))" % c.decode('utf-8'))
                 data = data[self.BIN_CHUNK_SIZE:]
 
+                print("\ttransfer %d of %d" % (file_size - len(data), file_size))
             self.exec_("f.close()")
 
         except PyboardError as e:
@@ -411,7 +413,7 @@ class MpFileExplorer(Pyboard):
             data = lines.encode("utf-8")
 
             self.exec_("f = open('%s', 'wb')" % self._fqn(dst))
-
+            
             while True:
                 c = binascii.hexlify(data[:self.BIN_CHUNK_SIZE])
                 if not len(c):
