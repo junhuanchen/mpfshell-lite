@@ -64,9 +64,12 @@ if serial.VERSION.startswith("2."):
             pass
 
 else:
-
-    # see if we could use the new Miniterm implementation
-    from serial.tools.miniterm import Miniterm, ConsoleBase, unichr
+    import sys
+    if sys.version_info < (3, 0):
+        # see if we could use the new Miniterm implementation
+        from serial.tools.miniterm import Miniterm, ConsoleBase
+    else:
+        from serial.tools.miniterm import Miniterm, ConsoleBase, unichr
     import os
     if os.name == 'nt':  # noqa
         import codecs
