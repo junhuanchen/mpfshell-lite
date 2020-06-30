@@ -652,7 +652,7 @@ class MpFileShell(cmd.Cmd):
         """
         if self.__is_open():
             try:
-                self.do_exec("exec(open('%s').read())" % args)
+                self.do_exec("f=open('%s')\nexec(f.read())\nf.close()" % args)
                 # ret = self.fe.follow(2)
                 # if len(ret[-1]):
                 #     self.__error(str(ret[-1].decode('utf-8')))
